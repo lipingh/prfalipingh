@@ -1,9 +1,3 @@
-library(data.table)
-library(readxl)
-datatable <- setDT(read_excel("data/crime-statistics-2016-17.xlsx"))
-setnames(datatable, c("date", "suburb", "postcode", "offence_level_1",
-                  "offence_level_2", "offence_level_3", "offence_count"))
-
 ## *Liping Huang*
 ## 4 Nov 2017
 #' HW2_function
@@ -18,7 +12,7 @@ setnames(datatable, c("date", "suburb", "postcode", "offence_level_1",
 #' @export
 #' @return  A ggplot object showing the correlation in offence count between the two input suburbs.
 #' @examples
-#' suburbs_crime(datatabel,"OFFENCES AGAINST PROPERTY", c("WEST BEACH", "ADELAIDE AIRPORT"))
+#' suburbs_crime(datatable,"OFFENCES AGAINST PROPERTY", c("WEST BEACH", "ADELAIDE AIRPORT"))
 suburbs_crime <- function(crime_data, offence_description, suburbs) {
   require(data.table)
   require(ggplot2)
@@ -63,4 +57,9 @@ suburbs_crime <- function(crime_data, offence_description, suburbs) {
          y = suburbs[2])
 }
 
-suburbs_crime(datatable,"OFFENCES AGAINST PROPERTY", c("WEST BEACH", "ADELAIDE AIRPORT"))
+#library(data.table)
+#library(readxl)
+#datatable <- setDT(read_excel("data/crime-statistics-2016-17.xlsx"))
+#setnames(datatable, c("date", "suburb", "postcode", "offence_level_1",
+#"offence_level_2", "offence_level_3", "offence_count"))
+#suburbs_crime(datatable,"OFFENCES AGAINST PROPERTY", c("WEST BEACH", "ADELAIDE AIRPORT"))
