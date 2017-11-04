@@ -13,6 +13,7 @@
 #' @return  A ggplot object showing the correlation in offence count between the two input suburbs.
 #' @examples
 #' suburbs_crime(datatable,"OFFENCES AGAINST PROPERTY", c("WEST BEACH", "ADELAIDE AIRPORT"))
+#' @export
 suburbs_crime <- function(crime_data, offence_description, suburbs) {
   require(data.table)
   require(ggplot2)
