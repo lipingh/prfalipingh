@@ -1,8 +1,8 @@
 ## *Liping Huang*
 ## 4 Nov 2017
 #' HW2_function
-#' \code{suburbs_crime} The fucntion take the user inputs, including two surburs,
-#' offence_descritpyions, and plot the correlation in offence count between the two suburbs
+#' \code{suburbs_crime} The function take the user inputs and plot the correlation
+#' in offence count between the two input suburbs from the data table
 #' @param crime_data A data.table object with the following columns:
 #'     "date" (POSIXct), "suburb" (chr), "postcode" (chr), "offence_level_1" (chr),
 #'     "offence_level_2" (chr), "offence_level_3" (chr), "offence_count" (num).
@@ -60,6 +60,5 @@ suburbs_crime <- function(crime_data, offence_description, suburbs) {
 #library(data.table)
 #library(readxl)
 #datatable <- setDT(read_excel("data/crime-statistics-2016-17.xlsx"))
-#setnames(datatable, c("date", "suburb", "postcode", "offence_level_1",
-#"offence_level_2", "offence_level_3", "offence_count"))
+#setnames(datatable, c("date", "suburb", "postcode", "offence_level_1","offence_level_2", "offence_level_3", "offence_count"))
 #suburbs_crime(datatable,"OFFENCES AGAINST PROPERTY", c("WEST BEACH", "ADELAIDE AIRPORT"))

@@ -3,8 +3,8 @@
 \name{suburbs_crime}
 \alias{suburbs_crime}
 \title{HW2_function
-\code{suburbs_crime} The fucntion take the user inputs, including two surburs,
-offence_descritpyions, and plot the correlation in offence count between the two suburbs}
+\code{suburbs_crime} The function take the user inputs and plot the correlation
+in offence count between the two input suburbs from the data table}
 \usage{
 suburbs_crime(crime_data, offence_description, suburbs)
 }
@@ -23,8 +23,8 @@ A ggplot object showing the correlation in offence count between the two input s
 }
 \description{
 HW2_function
-\code{suburbs_crime} The fucntion take the user inputs, including two surburs,
-offence_descritpyions, and plot the correlation in offence count between the two suburbs
+\code{suburbs_crime} The function take the user inputs and plot the correlation
+in offence count between the two input suburbs from the data table
 }
 \examples{
 suburbs_crime(datatable,"OFFENCES AGAINST PROPERTY", c("WEST BEACH", "ADELAIDE AIRPORT"))
