@@ -41,7 +41,7 @@ suburbs_crime <- function(crime_data, offence_description, suburbs) {
   # Make a data table for plotting using data.table transformations
   # You will need to filter, summarise and group by
   # Expect cols: "date", "suburb", "total_offence_count"
-  plot_data <- crime_data[suburb %in% suburbs, list(suburb, total_offence_count = sum(offence_count)),
+  plot_data <- crime_data[suburb %in% suburbs & offence_level_3 == offence_description, list(suburb, total_offence_count = sum(offence_count)),
                       by = date]
   # These lines will transform the plot_data structure to allow us to plot
   # correlations. Try them out
