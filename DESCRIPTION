@@ -2,7 +2,8 @@ Package: prfalipingh
 Type: Package
 Title: ggplot the correlation in offence_count between two suburbs
 Version: 0.1.0
-Author: Who wrote it
+Authors@R: person("Liping", "Huang", email = "lipingh@andrew.cmu.edu",
+                  role = c("aut", "cre"))
 Maintainer: The package maintainer <yourself@somewhere.net>
 Description: It take the user's inputs, which include a datatable, offence discription
     and two character element vector. Based on the inputs, it plots the correlation in 
