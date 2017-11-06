@@ -10,6 +10,7 @@
 #' @param suburbs A two-element character vector. Each element is the name (UPPERCASE)
 #'     of an SA suburb.
 #' @export
+#' @import data.table
 #' @return  A ggplot object showing the correlation in offence count between the two input suburbs.
 #' @examples
 #' suburbs_crime(datatable,"OFFENCES AGAINST PROPERTY", c("WEST BEACH", "ADELAIDE AIRPORT"))
@@ -42,7 +43,7 @@ suburbs_crime <- function(crime_data, offence_description, suburbs) {
   # Make a data table for plotting using data.table transformations
   # You will need to filter, summarise and group by
   # Expect cols: "date", "suburb", "total_offence_count"
-  plot_data <- crime_data[suburb %in% suburbs & offence_level_3 == offence_description, list(suburb, total_offence_count = sum(offence_count)),
+  plot_data <- crime_data[crime_data$suburb %in% suburbs & crime_data$offence_level_3 == offence_description, list(suburb, total_offence_count = sum(offence_count)),
                       by = date]
   # These lines will transform the plot_data structure to allow us to plot
   # correlations. Try them out
@@ -58,8 +59,3 @@ suburbs_crime <- function(crime_data, offence_description, suburbs) {
          y = suburbs[2])
 }
 
-#library(data.table)
-#library(readxl)
-#datatable <- setDT(read_excel("data/crime-statistics-2016-17.xlsx"))
-#setnames(datatable, c("date", "suburb", "postcode", "offence_level_1","offence_level_2", "offence_level_3", "offence_count"))
-#suburbs_crime(datatable,"OFFENCES AGAINST PROPERTY", c("WEST BEACH", "ADELAIDE AIRPORT"))
